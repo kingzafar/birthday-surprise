@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Moon Memory</title>
@@ -11,9 +12,10 @@
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 </head>
 
@@ -23,72 +25,55 @@
 
 <div class="moon"></div>
 
+<div class="fog fog1"></div>
+
+<div class="fog fog2"></div>
+
 <div class="overlay"></div>
 
 <div class="container">
 
-<div class="date">
-
-17 Mordad 1405
-
-</div>
-
 <div class="glass">
+
+<div class="date">
+17 August 2026
+</div>
 
 <div class="photo">
 
-<img src="images/photo.jpg" id="mainPhoto">
+<img src="images/photo.jpg" alt="Photo">
 
 </div>
 
 <h1 class="title">
-
-Happy Birthday
-
+Moon Memory
 </h1>
 
 <p class="subtitle">
 
-May you always smile,<br>
-
-shine,<br>
-
-and be surrounded by happiness.
+Every beautiful story begins with one unforgettable memory...
 
 </p>
 
 <div class="birds">
-
-🐦 🐦
-
+🕊️ 🕊️
 </div>
 
 <div class="music-row">
 
-<div class="music-icon">
+<button id="musicButton" class="music-btn">
 
 🎵
 
-</div>
+</button>
 
-<div class="qr-box"><div class="qr-content">
+<div class="qr-box">
 
-<div class="qr-placeholder">
-
-QR CODE
-
-</div>
-
-<p class="scan-text">
-
-Scan Me
-
-</p>
+<img src="images/qr.png" alt="QR" class="qr-image">
 
 </div>
 
 </div>
-
 
 <div class="login-panel">
 
@@ -98,19 +83,25 @@ Scan Me
 
 </div>
 
-
 <h2>
 
-Enter The Secret Code
+Private Memory
 
 </h2>
 
+<p>
 
-<input 
-type="password" 
-id="passwordInput" 
-placeholder="Password">
+Enter the Secret Code
 
+</p>
+
+<input
+
+id="passwordInput"
+
+type="password"
+
+placeholder="0919">
 
 <button id="unlockBtn">
 
@@ -118,118 +109,111 @@ Unlock
 
 </button>
 
-
 <p id="message"></p>
 
+  </div><div id="successScreen" class="hidden">
 
-</div>
+<div class="success-card">
 
-
-</div>
-
-
-<audio id="wrongMusic">
-
-<source src="music/vigen.mp3" type="audio/mpeg">
-
-</audio>
-
-
-<audio id="mainMusic">
-
-<source src="music/main.mp3" type="audio/mpeg">
-
-</audio>
-
-
-<div id="successScreen">
-
-<div class="success-image">
-
-<img src="images/photo.jpg">
-
-</div>
-
-
-<h1>
+<h2>
 
 Happy Birthday ❤️
 
-</h1>
-
+</h2>
 
 <p>
 
-A beautiful memory begins...
+Today is not just another day...
+
+It is the day the most beautiful person in my life was born.
 
 </p>
 
+<div class="success-photo">
 
-</div><script>
+<img src="images/photo.jpg" alt="Memory">
 
-const unlockBtn = document.getElementById("unlockBtn");
+</div>
 
-const passwordInput = document.getElementById("passwordInput");
+<p class="memory-text">
 
-const message = document.getElementById("message");
+Some memories never fade...
 
-const loginPanel = document.querySelector(".login-panel");
+They simply become more precious every single day.
 
-const successScreen = document.getElementById("successScreen");
+I hope this little surprise makes you smile.
 
-const wrongMusic = document.getElementById("wrongMusic");
+✨🌙❤️
 
-const mainMusic = document.getElementById("mainMusic");
+</p>
 
+<button id="continueBtn">
 
-unlockBtn.addEventListener("click", function(){
+Open My Gift 🎁
 
+</button>
 
-let password = passwordInput.value;
+</div>
 
+</div>
 
+<div id="videoSection" class="hidden">
 
-if(password === "0919"){
+<video
 
+id="memoryVideo"
 
-loginPanel.style.display = "none";
+controls
 
+playsinline>
 
-successScreen.style.display = "block";
+<source src="video/video.mp4" type="video/mp4">
 
+</video>
 
-setTimeout(function(){
+<div class="final-message">
 
-mainMusic.play();
+<h2>
 
-},3000);
+Forever With You ❤️
 
+</h2>
 
+<p>
 
-}
+Every moon reminds me of you...
 
-else{
+Every star carries one of our memories...
 
+</p>
 
-message.innerHTML = "Wrong Code... Try Again";
+</div>
 
+</div>
 
-document.body.classList.add("wrong");
+</div>
 
+</div>
 
-wrongMusic.play();
+<audio
 
+id="mainMusic"
 
+src="music/main.mp3"
 
-}
+preload="auto">
 
+</audio>
 
-});
+<audio
 
+id="wrongMusic"
 
+src="music/wrong.mp3"
 
-</script>
+preload="auto">
 
+</audio><script src="script.js"></script>
 
 </body>
 
